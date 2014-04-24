@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>comment</key>
+	<string>TODO: unresolved issues</string>
+	<key>name</key>
+	<string>StrongView tokens</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>begin</key>
+			<string>(##)(?=[^#]+##)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.embedded.begin.strongview</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(##)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.embedded.end.strongview</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>embedded.strongview</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>comment</key>
+							<string>default value</string>
+							<key>match</key>
+							<string>\[[^\]]+\]</string>
+							<key>name</key>
+							<string>string.quoted.strongview</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>indirect token</string>
+							<key>match</key>
+							<string>\\[^#\[\.]+</string>
+							<key>name</key>
+							<string>variable.strongview.indirect</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>subtoken</string>
+							<key>match</key>
+							<string>\.[^#\[]+</string>
+							<key>name</key>
+							<string>variable.strongview.subtoken</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>token</string>
+							<key>match</key>
+							<string>[^\\][^#\[\.]+</string>
+							<key>name</key>
+							<string>variable.strongview</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.strongview</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.strongview</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.strongview</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>default string</string>
+					<key>match</key>
+					<string>(\[)([^\]]+)(\])</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.strongview</string>
+	<key>uuid</key>
+	<string>B805B0C0-857B-45B0-8B7A-7066AD25371F</string>
+</dict>
+</plist>
